@@ -5,14 +5,25 @@ import {useState} from 'react'
 function App() {
   const [tasks, setTasks] = useState([]);
   const [newTask, setnewTask] = useState("");
+  const handleChange = (event) => {
+    setnewTask(event.target.value)   
+  }
+  const addTask = () => {
+    const newTodos = [...tasks, newTask]
+    setTasks(newTodos)
+    
+  }
   return ( 
     <div className="App">
       <h1>Hello World</h1>
       <div className='top'>
-        <input type="text" placeholder="Enter Task"/>
-        <button>Add Task</button>
-
+        <input onChange={handleChange} type="text" placeholder="Enter Task"/>
+        <button onClick={addTask}>Add Task</button>
+        {newTask}
       </div>
+      <div className='bottom'>
+        
+        </div>
       </div>
   );
 }
