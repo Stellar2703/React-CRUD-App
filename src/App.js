@@ -15,13 +15,13 @@ function App() {
 
   const deleteTask = (taskname) => {
     const newTodos1 = tasks.filter((task) => {
-      
       if (task === taskname) {
         return false;
       }else{
         return true;
       }
-
+// or the way could be
+// return task !== taskname
     });
     setTasks(newTodos1)
   }
