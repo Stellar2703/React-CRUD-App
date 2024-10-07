@@ -32,6 +32,8 @@ function App() {
         <input onChange={handleChange} type="text" placeholder="Enter Task"/>
         <button onClick={addTask}>Add Task</button>
         {newTask}
+        <h1>{tasks.length}</h1>
+
       </div>
       <div className='bottom'>
         {tasks.map((task) => {
@@ -45,6 +47,8 @@ function App() {
         </div>
       </div>
       
+
+
   )
 }
   
