@@ -11,7 +11,19 @@ function App() {
   const addTask = () => {
     const newTodos = [...tasks, newTask]
     setTasks(newTodos)
-    
+  }
+
+  const deleteTask = (taskname) => {
+    const newTodos1 = tasks.filter((task) => {
+      
+      if (task === taskname) {
+        return false;
+      }else{
+        return true;
+      }
+
+    });
+    setTasks(newTodos1)
   }
   return ( 
     <div className="App">
@@ -22,11 +34,20 @@ function App() {
         {newTask}
       </div>
       <div className='bottom'>
-        
+        {tasks.map((task) => {
+          return (<>
+          <h1>{task}</h1>
+          <button onClick={() => deleteTask(task)}>Delete Task</button>
+          </>
+          );
+
+        })}
         </div>
       </div>
-  );
+      
+  )
 }
+  
 
 
 
