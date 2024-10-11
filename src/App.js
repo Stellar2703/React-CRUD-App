@@ -31,7 +31,7 @@ function App() {
       {/* <h1>Hello World</h1> */}
       <div className='top'>
         <input onChange={handleChange} type="text" placeholder="Enter Task" class ="input"/>
-        <button onClick={addTask}>Add Task</button>
+        <button onClick={addTask} class="button-4">Add Task</button>
         {newTask}
         
 
