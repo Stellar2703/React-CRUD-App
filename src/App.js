@@ -27,12 +27,13 @@ function App() {
   }
   return ( 
     <div className="App">
-      <h1>Hello World</h1>
+      <h1>{tasks.length}</h1>
+      {/* <h1>Hello World</h1> */}
       <div className='top'>
         <input onChange={handleChange} type="text" placeholder="Enter Task"/>
         <button onClick={addTask}>Add Task</button>
         {newTask}
-        <h1>{tasks.length}</h1>
+        
 
       </div>
       <div className='bottom'>
