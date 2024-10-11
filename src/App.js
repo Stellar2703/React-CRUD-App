@@ -30,7 +30,7 @@ function App() {
       <h1>{tasks.length}</h1>
       {/* <h1>Hello World</h1> */}
       <div className='top'>
-        <input onChange={handleChange} type="text" placeholder="Enter Task"/>
+        <input onChange={handleChange} type="text" placeholder="Enter Task" class ="input"/>
         <button onClick={addTask}>Add Task</button>
         {newTask}
         
