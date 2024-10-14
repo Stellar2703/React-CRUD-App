@@ -3,55 +3,41 @@ import './App.css';
 import {useState} from 'react'
 
 function App() {
-  const [tasks, setTasks] = useState([]);
-  const [newTask, setnewTask] = useState("");
+  const [todolist,settodolist] = useState([]);
+  const [newTask,setnewTask] = useState("");  
   const handleChange = (event) => {
-    setnewTask(event.target.value)   
-  }
+    setnewTask(event.target.value)
+    {console.log(newTask)}
+  };
   const addTask = () => {
-    const newTodos = [...tasks, newTask]
-    setTasks(newTodos)
+    const newTodos = [...todolist, newTask]
+    settodolist(newTodos)
+    {console.log(todolist)}
   }
 
-  const deleteTask = (taskname) => {
-    const newTodos1 = tasks.filter((task) => {
-      if (task === taskname) {
-        return false;
-      }else{
-        return true;
-      }
-// or the way could be
-// return task !== taskname
-    });
-    setTasks(newTodos1)
-  }
-  return ( 
-    <div className="App">
-      <h1>{tasks.length}</h1>
-      {/* <h1>Hello World</h1> */}
-      <div className='top'>
-        <input onChange={handleChange} type="text" placeholder="Enter Task" class ="input"/>
-        <button onClick={addTask} class="button-4">Add Task</button>
-        {newTask}
-        
-
-      </div>
-      <div className='bottom'>
-        {tasks.map((task) => {
-          return (<>
-          <h1>{task}</h1>
-          <button onClick={() => deleteTask(task)}>Delete Task</button>
-          </>
+  
+  return(
+    <div className="App"><h1>To-Do List</h1>
+     <div className="addTask">
+        <input onChange={handleChange} type="text" placeholder="Enter Task" />
+        <button onClick={addTask}>Add Task</button>
+        {todolist.map((task) => {
+          return(
+            <div>
+              <h1>{task}</h1>
+              <button >Delete Task</button>
+            </div>
           );
-
         })}
-        </div>
-      </div>
-      
+    
+    
+    </div>  
+  
+    </div>
+    );
+  }
+  
 
-
-  )
-}
   
 
 
@@ -82,7 +68,52 @@ function App() {
 
 
 
+// const [tasks, setTasks] = useState([]);
+//   const [newTask, setnewTask] = useState("");
+//   const handleChange = (event) => {
+//     setnewTask(event.target.value)   
+//   }
+//   const addTask = () => {
+//     const newTodos = [...tasks, newTask]
+//     setTasks(newTodos)
+//   }
 
+//   const deleteTask = (taskname) => {
+//     const newTodos1 = tasks.filter((task) => {
+//       if (task === taskname) {
+//         return false;
+//       }else{
+//         return true;
+//       }
+// // or the way could be
+// // return task !== taskname
+//     });
+//     setTasks(newTodos1)
+//   }
+//   return ( 
+//     <div className="App">
+//       <h1>{tasks.length}</h1>
+//       {/* <h1>Hello World</h1> */}
+//       <div className='top'>
+//         <input onChange={handleChange} type="text" placeholder="Enter Task" class ="input"/>
+//         <button onClick={addTask} class="button-4">Add Task</button>
+//         {newTask}
+//       </div>
+//       <div className='bottom'>
+//         {tasks.map((task) => {
+//           return (<>
+//           <h1>{task}</h1>
+//           <button onClick={() => deleteTask(task)}>Delete Task</button>
+//           </>
+//           );
+
+//         })}
+//         </div>
+//       </div>
+      
+
+
+//   )
 
 
 
