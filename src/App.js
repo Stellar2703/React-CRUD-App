@@ -13,6 +13,19 @@ function App() {
     const newTodos = [...todolist, newTask]
     settodolist(newTodos)
     {console.log(todolist)}
+
+
+  }
+  
+  const deletetask = (task) => {
+    const temptodo = todolist.filter((taskname) => {
+      if(taskname === task){
+        return false;
+      }else{
+        return true;
+      }
+    });
+    settodolist(temptodo);
   }
 
   
@@ -25,7 +38,7 @@ function App() {
           return(
             <div>
               <h1>{task}</h1>
-              <button >Delete Task</button>
+              <button onClick={()=>deletetask(task)}>Delete Task</button>
             </div>
           );
         })}
