@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import {useState} from 'react'
+import Axios from 'axios';
 
 function App() {
   const [todolist,settodolist] = useState([]);
@@ -28,10 +29,14 @@ function App() {
     settodolist(temptodo);
   }
 
-  
+  Axios.get("https://catfact.ninja/fact").then((response) => {
+    console.log(response.data.fact) })
+
   return(
     <div className="App"><h1>To-Do List</h1>
      <div className="addTask">
+      
+     
         <input onChange={handleChange} type="text" placeholder="Enter Task" />
         <button onClick={addTask}>Add Task</button>
         {todolist.map((task) => {
