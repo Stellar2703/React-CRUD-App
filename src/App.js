@@ -29,7 +29,7 @@ function App() {
     settodolist(temptodo);
   }
 
-  Axios.get("https://catfact.ninja/fact").then((response) => {
+  Axios.get("https://catfact.ninja/fact").then((response) => { # for simple api call
     console.log(response.data.fact) })
 
   return(
@@ -37,8 +37,8 @@ function App() {
      <div className="addTask">
       
      
-        <input onChange={handleChange} type="text" placeholder="Enter Task" />
-        <button onClick={addTask}>Add Task</button>
+        {/* <input onChange={handleChange} type="text" placeholder="Enter Task" />
+        <button onClick={addTask}>Add Task</button> */}
         {todolist.map((task) => {
           return(
             <div>
